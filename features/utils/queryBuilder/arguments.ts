@@ -230,3 +230,19 @@ export class AttachmentsDir implements Argument {
     return "";
   }
 }
+
+export class Timeout implements Argument {
+  private readonly timeout?: number;
+
+  constructor(timeout?: number) {
+    this.timeout = timeout;
+  }
+
+  getArgumentQuery() {
+    if (this.timeout) {
+      return `--timeout ${this.timeout}`;
+    }
+
+    return "";
+  }
+}

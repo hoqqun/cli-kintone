@@ -42,6 +42,10 @@ const builder = (args: yargs.Argv) =>
       default: "utf8" as SupportedImportEncoding,
       choices: encoding,
       requiresArg: true,
+    })
+    .option("timeout", {
+      describe: "The maximum duration (in milliseconds) to wait for a response before timing out. Defaults to 10 minutes",
+      type: "number",
     });
 
 type Args = yargs.Arguments<

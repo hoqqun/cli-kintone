@@ -28,6 +28,7 @@ See [Options](/guide/options) page for common options.
 | `--encoding  `      |          | Character encoding<br/>Default to `utf8`<br/>Encodings: `utf8` and `sjis`                                                                                       |
 | `--update-key`      |          | The key to Bulk Update<br/>When this option is set, cli-kintone will be in the UPSERT mode.<br/>See [Upsert records](#upsert-records) section for more details. |
 | `--fields  `        |          | The fields to be imported in comma-separated                                                                                                                    |
+| `--timeout`         |          | The maximum duration (in milliseconds) to wait for a response before timing out. Defaults to 10 minutes                                                         |
 
 :::note
 A field within a Table cannot be specified to the `fields` option.

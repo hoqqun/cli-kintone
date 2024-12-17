@@ -20,14 +20,15 @@ cli-kintone record export \
 
 See [Options](/guide/options) page for common options.
 
-| Option              | Required | Description                                                               |
-| ------------------- | -------- | ------------------------------------------------------------------------- |
-| `--app`             | Yes      | The ID of the app                                                         |
-| `--attachments-dir` |          | Attachment file directory                                                 |
-| `--condition`, `-c` |          | The query string                                                          |
-| `--order-by`        |          | The sort order as a query                                                 |
-| `--fields`          |          | The fields to be exported in comma-separated                              |
-| `--encoding  `      |          | Character encoding<br/>Default to `utf8`<br/>Encodings: `utf8` and `sjis` |
+| Option              | Required | Description                                                                                             |
+| ------------------- | -------- | ------------------------------------------------------------------------------------------------------- |
+| `--app`             | Yes      | The ID of the app                                                                                       |
+| `--attachments-dir` |          | Attachment file directory                                                                               |
+| `--condition`, `-c` |          | The query string                                                                                        |
+| `--order-by`        |          | The sort order as a query                                                                               |
+| `--fields`          |          | The fields to be exported in comma-separated                                                            |
+| `--encoding  `      |          | Character encoding<br/>Default to `utf8`<br/>Encodings: `utf8` and `sjis`                               |
+| `--timeout`         |          | The maximum duration (in milliseconds) to wait for a response before timing out. Defaults to 10 minutes |
 
 ### Notes
 

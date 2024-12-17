@@ -18,6 +18,7 @@ describe("Record - Subcommand", () => {
           Arguments.Encoding,
           Arguments.UpdateKey,
           Arguments.Fields,
+          Arguments.Timeout,
         ],
       },
       {
@@ -34,6 +35,7 @@ describe("Record - Subcommand", () => {
           Arguments.Fields,
           Arguments.Condition,
           Arguments.OrderBy,
+          Arguments.Timeout,
         ],
       },
       {
@@ -46,6 +48,7 @@ describe("Record - Subcommand", () => {
           Arguments.FilePath,
           Arguments.Encoding,
           Arguments.Yes,
+          Arguments.Timeout,
         ],
       },
     ];

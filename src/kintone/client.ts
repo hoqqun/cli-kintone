@@ -17,6 +17,7 @@ export type RestAPIClientOptions = {
   pfxFilePassword?: string;
   userAgent?: string;
   httpsProxy?: string;
+  timeout?: number;
 };
 
 const DEFAULT_SOCKET_TIMEOUT = 600000;
@@ -84,6 +85,6 @@ export const buildRestAPIClient = (options: RestAPIClientOptions) => {
       pfxFilePath: options.pfxFilePath,
       pfxFilePassword: options.pfxFilePassword,
     }),
-    socketTimeout: DEFAULT_SOCKET_TIMEOUT,
+    socketTimeout: options.timeout ?? DEFAULT_SOCKET_TIMEOUT,
   });
 };

@@ -27,12 +27,13 @@ You can bypass the confirmation step by using the options `--yes` or `-y`.
 
 See [Options](/guide/options) page for common options.
 
-| Option         | Required | Description                                                               |
-| -------------- | -------- | ------------------------------------------------------------------------- |
-| `--app`        | Yes      | The ID of the app                                                         |
-| `--file-path`  |          | The path to the source file.                                              |
-| `--encoding  ` |          | Character encoding<br/>Default to `utf8`<br/>Encodings: `utf8` and `sjis` |
-| `--yes`, `-y`  |          | Force to delete records                                                   |
+| Option         | Required | Description                                                                                             |
+| -------------- | -------- | ------------------------------------------------------------------------------------------------------- |
+| `--app`        | Yes      | The ID of the app                                                                                       |
+| `--file-path`  |          | The path to the source file.                                                                            |
+| `--encoding  ` |          | Character encoding<br/>Default to `utf8`<br/>Encodings: `utf8` and `sjis`                               |
+| `--yes`, `-y`  |          | Force to delete records                                                                                 |
+| `--timeout`    |          | The maximum duration (in milliseconds) to wait for a response before timing out. Defaults to 10 minutes |
 
 ## Delete all records
 

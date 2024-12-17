@@ -34,11 +34,12 @@ describe("Record command", () => {
         encoding: "utf8",
         updateKey: "Record_number",
         fields: ["field1", "field2"],
+        timeout: 1000,
       };
 
       const query = new RecordCommand().import(args).getQuery();
       expect(query).toBe(
-        "record import --base-url https://example.com --app 1 --file-path test.csv --api-token token --guest-space-id 2 --attachments-dir attachments --encoding utf8 --update-key Record_number --fields field1,field2",
+        "record import --base-url https://example.com --app 1 --file-path test.csv --api-token token --guest-space-id 2 --attachments-dir attachments --encoding utf8 --update-key Record_number --fields field1,field2 --timeout 1000",
       );
     });
 
@@ -56,11 +57,12 @@ describe("Record command", () => {
         condition: "field1='value1'",
         orderBy: "field1 asc",
         destFilePath: "records.csv",
+        timeout: 1000,
       };
 
       const query = new RecordCommand().export(args).getQuery();
       expect(query).toBe(
-        'record export --base-url https://example.com --app 1 --username user --password pass --api-token token1,token2 --guest-space-id 2 --attachments-dir attachments --encoding utf8 --fields field1,field2 --condition "field1=\'value1\'" --order-by "field1 asc" > records.csv',
+        'record export --base-url https://example.com --app 1 --username user --password pass --api-token token1,token2 --guest-space-id 2 --attachments-dir attachments --encoding utf8 --fields field1,field2 --condition "field1=\'value1\'" --order-by "field1 asc" --timeout 1000 > records.csv',
       );
     });
 
@@ -73,11 +75,12 @@ describe("Record command", () => {
         encoding: "utf8",
         filePath: "test.csv",
         yes: true,
+        timeout: 1000
       };
 
       const query = new RecordCommand().delete(args).getQuery();
       expect(query).toBe(
-        "record delete --base-url https://example.com --app 1 --api-token token1,token2 --guest-space-id 2 --file-path test.csv --encoding utf8 --yes",
+        "record delete --base-url https://example.com --app 1 --api-token token1,token2 --guest-space-id 2 --file-path test.csv --encoding utf8 --yes --timeout 1000",
       );
     });
   });

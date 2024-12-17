@@ -45,6 +45,10 @@ const builder = (args: yargs.Argv) =>
       describe: "The fields to be exported in comma-separated",
       type: "string",
       requiresArg: true,
+    })
+    .option("timeout", {
+      describe: "The maximum duration (in milliseconds) to wait for a response before timing out. Defaults to 10 minutes",
+      type: "number",
     });
 
 type Args = yargs.Arguments<
@@ -69,6 +73,7 @@ const handler = (args: Args) => {
     pfxFilePath: args["pfx-file-path"],
     pfxFilePassword: args["pfx-file-password"],
     httpsProxy: args.proxy,
+    timeout: args.timeout,
   });
 };
 

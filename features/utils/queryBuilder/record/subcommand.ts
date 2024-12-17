@@ -20,6 +20,7 @@ export type ImportArgs = {
   encoding?: string;
   updateKey?: string;
   fields?: string[];
+  timeout?: number;
 };
 
 export type ExportArgs = {
@@ -35,6 +36,7 @@ export type ExportArgs = {
   condition?: string;
   orderBy?: string;
   destFilePath?: string;
+  timeout?: number;
 };
 
 export type DeleteArgs = {
@@ -45,6 +47,7 @@ export type DeleteArgs = {
   filePath?: string;
   encoding?: string;
   yes?: boolean;
+  timeout?: number;
 };
 
 export type ImportArgsList =
@@ -58,7 +61,8 @@ export type ImportArgsList =
   | Arguments.AttachmentsDir
   | Arguments.Encoding
   | Arguments.UpdateKey
-  | Arguments.Fields;
+  | Arguments.Fields
+  | Arguments.Timeout;
 
 export type ExportArgsList =
   | Arguments.BaseUrl
@@ -71,7 +75,8 @@ export type ExportArgsList =
   | Arguments.Encoding
   | Arguments.Fields
   | Arguments.Condition
-  | Arguments.OrderBy;
+  | Arguments.OrderBy
+  | Arguments.Timeout;
 
 export type DeleteArgsList =
   | Arguments.BaseUrl
@@ -80,7 +85,8 @@ export type DeleteArgsList =
   | Arguments.GuestSpaceId
   | Arguments.FilePath
   | Arguments.Encoding
-  | Arguments.Yes;
+  | Arguments.Yes
+  | Arguments.Timeout;
 
 export const getArgumentsListBySubcommand = (
   args: ImportArgs | ExportArgs | DeleteArgs,
@@ -101,6 +107,7 @@ export const getArgumentsListBySubcommand = (
         new Arguments.Encoding(importArgs.encoding),
         new Arguments.UpdateKey(importArgs.updateKey),
         new Arguments.Fields(importArgs.fields),
+        new Arguments.Timeout(importArgs.timeout)
       ] as ImportArgsList[];
     }
     case SUBCOMMANDS.EXPORT: {
@@ -117,6 +124,7 @@ export const getArgumentsListBySubcommand = (
         new Arguments.Fields(exportArgs.fields),
         new Arguments.Condition(exportArgs.condition),
         new Arguments.OrderBy(exportArgs.orderBy),
+        new Arguments.Timeout(exportArgs.timeout)
       ] as ExportArgsList[];
     }
     case SUBCOMMANDS.DELETE: {
@@ -129,6 +137,7 @@ export const getArgumentsListBySubcommand = (
         new Arguments.FilePath(deleteArgs.filePath),
         new Arguments.Encoding(deleteArgs.encoding),
         new Arguments.Yes(deleteArgs.yes),
+        new Arguments.Timeout(deleteArgs.timeout)
       ] as DeleteArgsList[];
     }
     default:
